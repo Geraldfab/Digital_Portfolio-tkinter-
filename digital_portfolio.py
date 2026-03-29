@@ -734,6 +734,10 @@ working on improving my skills in various areas of technology."""
         )
         title.pack(anchor='w', pady=30)
         
+        # Experience cards container using place
+        exp_container = tk.Frame(frame, bg=COLORS['bg_primary'])
+        exp_container.place(x=0, y=80, relwidth=1, relheight=1)
+        
         # Experience cards
         for i, exp in enumerate(PERSONAL_INFO['experience']):
             card = self.create_experience_card(exp)
@@ -744,7 +748,7 @@ working on improving my skills in various areas of technology."""
     def create_experience_card(self, experience: dict):
         """Create an experience card"""
         card = tk.Frame(
-            self.content_frame.winfo_children()[0] if self.content_frame.winfo_children() else self.content_frame,
+            None,
             bg=COLORS['card_bg'],
             padx=30,
             pady=25
@@ -812,30 +816,27 @@ working on improving my skills in various areas of technology."""
         )
         title.pack(anchor='w', pady=30)
         
-        # Projects grid
+        # Projects grid container - use place instead of pack to avoid grid conflict
         projects_grid = tk.Frame(frame, bg=COLORS['bg_primary'])
-        projects_grid.pack(fill='both', expand=True)
+        projects_grid.place(x=0, y=0, relwidth=1, relheight=1)
         
-        # Create project cards in a grid
+        # Create project cards in a grid using grid manager
         for i, project in enumerate(PERSONAL_INFO['projects']):
             row = i // 2
             col = i % 2
             
             card = self.create_project_card(project)
             card.grid(row=row, column=col, padx=10, pady=10, sticky='nsew')
-        
-        # Configure grid weights
-        projects_grid.columnconfigure(0, weight=1)
-        projects_grid.columnconfigure(1, weight=1)
-        projects_grid.rowconfigure(0, weight=1)
-        projects_grid.rowconfigure(1, weight=1)
+            # Make the card expand
+            projects_grid.grid_rowconfigure(row, weight=1)
+            projects_grid.grid_columnconfigure(col, weight=1)
         
         return frame
     
     def create_project_card(self, project: dict):
         """Create a project card"""
         card = tk.Frame(
-            self.content_frame,
+            None,
             bg=COLORS['card_bg'],
             padx=20,
             pady=20
@@ -901,30 +902,26 @@ working on improving my skills in various areas of technology."""
         )
         title.pack(anchor='w', pady=30)
         
-        # Services grid
+        # Services grid container - use place instead of pack to avoid grid conflict
         services_grid = tk.Frame(frame, bg=COLORS['bg_primary'])
-        services_grid.pack(fill='both', expand=True)
+        services_grid.place(x=0, y=0, relwidth=1, relheight=1)
         
-        # Create service cards in a grid
+        # Create service cards in a grid using grid manager
         for i, service in enumerate(PERSONAL_INFO['services']):
             row = i // 2
             col = i % 2
             
             card = self.create_service_card(service)
             card.grid(row=row, column=col, padx=10, pady=10, sticky='nsew')
-        
-        # Configure grid weights
-        services_grid.columnconfigure(0, weight=1)
-        services_grid.columnconfigure(1, weight=1)
-        services_grid.rowconfigure(0, weight=1)
-        services_grid.rowconfigure(1, weight=1)
+            services_grid.grid_rowconfigure(row, weight=1)
+            services_grid.grid_columnconfigure(col, weight=1)
         
         return frame
     
     def create_service_card(self, service: dict):
         """Create a service card"""
         card = tk.Frame(
-            self.content_frame,
+            None,
             bg=COLORS['card_bg'],
             padx=30,
             pady=25
