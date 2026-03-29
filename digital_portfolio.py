@@ -266,7 +266,7 @@ class FloatingContactButton:
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 9)
-        ).pack(anchor='w', pady=(0, 10))
+        ).pack(anchor='w', pady="0 10")
         
         # Phone
         tk.Label(
@@ -282,7 +282,7 @@ class FloatingContactButton:
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 9)
-        ).pack(anchor='w', pady=(0, 10))
+        ).pack(anchor='w', pady="0 10")
         
         # Location
         tk.Label(
@@ -298,7 +298,7 @@ class FloatingContactButton:
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 9)
-        ).pack(anchor='w', pady=(0, 10))
+        ).pack(anchor='w', pady="0 10")
     
     def toggle_contact(self):
         """Toggle contact details visibility"""
@@ -455,7 +455,7 @@ class DigitalPortfolio:
             fg=COLORS['text_secondary'],
             font=('Segoe UI', 18)
         )
-        greeting.pack(anchor='w', pady=(100, 0))
+        greeting.pack(anchor='w', pady="100")
         
         # Name
         name_label = tk.Label(
@@ -475,7 +475,7 @@ class DigitalPortfolio:
             fg=COLORS['text_primary'],
             font=('Segoe UI', 20)
         )
-        title_label.pack(anchor='w', pady=(10, 30))
+        title_label.pack(anchor='w', pady="10")
         
         # Short bio
         bio_label = tk.Label(
@@ -486,7 +486,7 @@ class DigitalPortfolio:
             font=('Segoe UI', 14),
             justify='left'
         )
-        bio_label.pack(anchor='w', pady=(0, 30))
+        bio_label.pack(anchor='w', pady="0 30")
         
         # CTA Buttons
         btn_frame = tk.Frame(left_frame, bg=COLORS['bg_primary'])
@@ -498,7 +498,7 @@ class DigitalPortfolio:
             lambda: self.show_section('projects'),
             bg=COLORS['accent'],
             hover=COLORS['accent_secondary']
-        ).pack(side='left', padx=(0, 15))
+        ).pack(side='left', padx="0")
         
         AnimatedButton(
             btn_frame,
@@ -519,7 +519,7 @@ class DigitalPortfolio:
             width=300,
             height=350
         )
-        profile_container.pack(pady=(80, 0))
+        profile_container.pack(pady="80")
         profile_container.pack_propagate(False)
         
         # Profile placeholder icon
@@ -564,7 +564,7 @@ class DigitalPortfolio:
             fg=COLORS['accent'],
             font=('Segoe UI', 36, 'bold')
         )
-        title.pack(anchor='w', pady=(30, 30))
+        title.pack(anchor='w', pady="30")
         
         # Content container
         content = tk.Frame(frame, bg=COLORS['bg_primary'])
@@ -572,7 +572,7 @@ class DigitalPortfolio:
         
         # Left - Bio
         left = tk.Frame(content, bg=COLORS['bg_primary'])
-        left.pack(side='left', fill='both', expand=True, padx=(0, 30))
+        left.pack(side='left', fill='both', expand=True, padx="0")
         
         bio_text = """Hi! I'm Gerald Fabre, a passionate developer and lifelong learner 
 based in Bukidnon, Philippines.
@@ -607,7 +607,7 @@ working on improving my skills in various areas of technology."""
             [f"{e['school']} ({e['year']})" for e in PERSONAL_INFO['education']],
             COLORS['card_bg']
         )
-        edu_card.pack(fill='x', pady=(0, 15))
+        edu_card.pack(fill='x', pady="0 15")
         
         # Interests card
         interests_card = self.create_card(
@@ -616,7 +616,7 @@ working on improving my skills in various areas of technology."""
             PERSONAL_INFO['interests'],
             COLORS['card_bg']
         )
-        interests_card.pack(fill='x', pady=(0, 15))
+        interests_card.pack(fill='x', pady="0 15")
         
         # Achievements card
         achievements_card = self.create_card(
@@ -641,7 +641,7 @@ working on improving my skills in various areas of technology."""
             fg=COLORS['accent'],
             font=('Segoe UI', 36, 'bold')
         )
-        title.pack(anchor='w', pady=(30, 30))
+        title.pack(anchor='w', pady="30")
         
         # Skills container
         skills_container = tk.Frame(frame, bg=COLORS['bg_primary'])
@@ -649,7 +649,7 @@ working on improving my skills in various areas of technology."""
         
         # Left column
         left = tk.Frame(skills_container, bg=COLORS['bg_primary'])
-        left.pack(side='left', fill='both', expand=True, padx=(0, 30))
+        left.pack(side='left', fill='both', expand=True, padx="0")
         
         # Right column
         right = tk.Frame(skills_container, bg=COLORS['bg_primary'])
@@ -687,7 +687,7 @@ working on improving my skills in various areas of technology."""
         
         # Progress bar container
         progress_frame = tk.Frame(container, bg=COLORS['bg_tertiary'], height=8)
-        progress_frame.pack(fill='x', pady=(5, 0))
+        progress_frame.pack(fill='x', pady="5")
         progress_frame.pack_propagate(False)
         
         # Progress fill
@@ -718,7 +718,7 @@ working on improving my skills in various areas of technology."""
             fg=COLORS['text_secondary'],
             font=('Segoe UI', 10)
         )
-        percent_label.pack(anchor='e', pady=(5, 0))
+        percent_label.pack(anchor='e', pady="5")
     
     def create_experience_section(self):
         """Create experience section"""
@@ -732,12 +732,12 @@ working on improving my skills in various areas of technology."""
             fg=COLORS['accent'],
             font=('Segoe UI', 36, 'bold')
         )
-        title.pack(anchor='w', pady=(30, 30))
+        title.pack(anchor='w', pady="30")
         
         # Experience cards
         for i, exp in enumerate(PERSONAL_INFO['experience']):
             card = self.create_experience_card(exp)
-            card.pack(fill='x', pady=(0, 20))
+            card.pack(fill='x', pady="0 20")
         
         return frame
     
@@ -769,7 +769,7 @@ working on improving my skills in various areas of technology."""
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 18, 'bold'),
-            pady=(10, 5)
+            pady="10"
         )
         role_label.pack(anchor='w')
         
@@ -792,7 +792,7 @@ working on improving my skills in various areas of technology."""
             font=('Segoe UI', 12),
             wraplength=600,
             justify='left',
-            pady=(10, 0)
+            pady="10"
         )
         desc_label.pack(anchor='w')
         
@@ -810,7 +810,7 @@ working on improving my skills in various areas of technology."""
             fg=COLORS['accent'],
             font=('Segoe UI', 36, 'bold')
         )
-        title.pack(anchor='w', pady=(30, 30))
+        title.pack(anchor='w', pady="30")
         
         # Projects grid
         projects_grid = tk.Frame(frame, bg=COLORS['bg_primary'])
@@ -858,7 +858,7 @@ working on improving my skills in various areas of technology."""
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 16, 'bold'),
-            pady=(10, 5)
+            pady="10"
         )
         name_label.pack()
         
@@ -881,7 +881,7 @@ working on improving my skills in various areas of technology."""
             bg=COLORS['card_bg'],
             fg=COLORS['accent'],
             font=('Segoe UI', 10),
-            pady=(10, 0)
+            pady="10"
         )
         tech_label.pack()
         
@@ -899,7 +899,7 @@ working on improving my skills in various areas of technology."""
             fg=COLORS['accent'],
             font=('Segoe UI', 36, 'bold')
         )
-        title.pack(anchor='w', pady=(30, 30))
+        title.pack(anchor='w', pady="30")
         
         # Services grid
         services_grid = tk.Frame(frame, bg=COLORS['bg_primary'])
@@ -950,7 +950,7 @@ working on improving my skills in various areas of technology."""
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 16, 'bold'),
-            pady=(10, 5)
+            pady="10"
         )
         name_label.pack()
         
@@ -979,7 +979,7 @@ working on improving my skills in various areas of technology."""
             bg=bg_color,
             fg=COLORS['text_primary'],
             font=('Segoe UI', 14, 'bold'),
-            pady=(0, 15)
+            pady="0 15"
         )
         title_label.pack(anchor='w')
         
@@ -994,7 +994,7 @@ working on improving my skills in various areas of technology."""
                 wraplength=300,
                 justify='left'
             )
-            item_label.pack(anchor='w', pady=(0, 5))
+            item_label.pack(anchor='w', pady="0 5")
         
         return card
     
@@ -1049,7 +1049,7 @@ working on improving my skills in various areas of technology."""
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 11)
-        ).pack(anchor='w', pady=(0, 10))
+        ).pack(anchor='w', pady="0 10")
         
         # Phone
         tk.Label(
@@ -1065,7 +1065,7 @@ working on improving my skills in various areas of technology."""
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 11)
-        ).pack(anchor='w', pady=(0, 10))
+        ).pack(anchor='w', pady="0 10")
         
         # Location
         tk.Label(
@@ -1081,7 +1081,7 @@ working on improving my skills in various areas of technology."""
             bg=COLORS['card_bg'],
             fg=COLORS['text_primary'],
             font=('Segoe UI', 11)
-        ).pack(anchor='w', pady=(0, 10))
+        ).pack(anchor='w', pady="0 10")
         
         self.contact_popup_visible = False
     
